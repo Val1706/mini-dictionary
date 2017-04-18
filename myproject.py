@@ -40,20 +40,21 @@ while True:
                     if len(row) != 0:
                         readFile = readFile + [row]
 
+       
         if answer == "1":
             dct_n = dict(readFile)
             search = input("Type word: ")
             search = search.capitalize()
-            if search.capitalize() in dct_n:
-                for keys in dct_n:
-                    dct_n[keys] = dct_n[keys].split("', '")
+            for keys in dct_n:
+                if search in dct_n.keys():
+                    dct_n[keys] = dct_n[search].split("', '")
                     dct_n[keys][0] = dct_n[keys][0].split("('")
                     dct_n[keys][1] = dct_n[keys][1].split("')")
                     print("\n", search, "-", dct_n[keys][0][1], "\n", dct_n[keys][1][0])
                     break
-            else:
-                print("\n No", search, "definition")
-                continue
+                else:
+                    print("\n No", search, "definition")
+                    continue
 
 
 
