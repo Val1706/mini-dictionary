@@ -54,7 +54,7 @@ while True:
                     break
                 else:
                     print("\n No", search, "definition")
-                    continue
+                    break
 
 
 
